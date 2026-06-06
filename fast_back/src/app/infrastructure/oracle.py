@@ -33,5 +33,6 @@ async def get_oracle_db():
     async with AsyncSessionLocal() as db:
         try:
             yield db
+
         finally:
             await db.close()
