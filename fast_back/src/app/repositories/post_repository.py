@@ -36,13 +36,13 @@ class PostRespository:
         return new_post_id
 
     # 게시글 전체 조회
-    async def find_posts(self) -> list[PostListResponseDTO]:
+    async def find_posts(self) -> list[Post]:
         query = select(Post).options(joinedload(Post.member))
         result = await self.db.execute(query)
         return result.scalars().all()
 
     # 게시글 1개 조회
-    async def find_post(self, post_id: int) -> PostDetailResponseDTO:
+    async def find_post(self, post_id: int) -> Post:
         query = (
             select(Post)
             .options(joinedload(Post.member))

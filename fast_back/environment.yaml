@@ -18,6 +18,7 @@ dependencies:
         - httpx
         - pyjwt
         - pillow
+        - python-multipart
         - passlib[bcrypt]
         - oracledb
         - redis
